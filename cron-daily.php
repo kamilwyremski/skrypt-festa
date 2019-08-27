@@ -43,7 +43,6 @@ function cron(){
 	}
 	$db->query('UPDATE '._DB_PREFIX_.'offers SET promoted=0 WHERE promoted=1 and promoted_date_end<CURDATE()');
 	
-	refresh_ecu();
 }
 cron();
 
