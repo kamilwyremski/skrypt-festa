@@ -1,0 +1,30 @@
+	<div class="center">
+		<h1>{'Mailing'|lang}</h1>
+		<p>{'Here you can send mailing to users'|lang}</p>
+		{if isset($mails_queue)}
+			<h3 class="red">{'Warning! Mailing is in progress'|lang}</h3>
+			<p>{'Mails in queue'|lang}: {$mails_queue}</p>
+		{/if}
+		<br>
+		<form method="post">
+			<input type="hidden" name="action" value="send_mailing">
+			<h2>{'Title'|lang}</h2>
+			<input type="text" name="subject" title="{'Enter the message title'|lang}" placeholder="{'Title'|lang}" required>
+			<textarea name="message"></textarea>
+			<script>
+				{literal}
+					var roxyFileman = 'js/ckeditor/fileman/index.html'; 
+					$(function(){
+						CKEDITOR.replace( '{/literal}message{literal}',{height: '200px',
+							filebrowserBrowseUrl:roxyFileman,
+							filebrowserImageBrowseUrl:roxyFileman+'?type=image',
+							removeDialogTabs: 'link:upload;image:upload'}); 
+					});
+				{/literal}
+			</script>
+			<br><br>
+			<input type="submit" value="{'Start sending emails'|lang}">
+		</form>
+	</div>
+	
+	

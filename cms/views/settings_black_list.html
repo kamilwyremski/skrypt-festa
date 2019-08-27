@@ -1,0 +1,16 @@
+	<div class="center">
+		<h1>{'Black list'|lang}</h1>
+		<p>{'Here you can edit the black list. Members identified by them will not be able to register or add offer'|lang}</p>
+		<p>{'Each address type in the new line. After saving will be arranged alphabetically'|lang}</p>
+		<br><br>
+		<form method="post">
+			<input type="hidden" name="action" value="save_settings_black_list">
+			<h2>{'E-mail addresses'|lang}:</h2>
+			<textarea name="black_list_email" title="{'E-mail addresses'|lang}" class="form-control" style="min-height:150px">{$settings.black_list_email}</textarea>
+			<h2>{'IP addresses'|lang}:</h2>
+			<textarea name="black_list_ip" title="{'IP addresses'|lang}" class="form-control" style="min-height:150px">{$settings.black_list_ip}</textarea>
+			<br><br>
+			<input type="submit" value="{'Save'|lang}">
+		</form>
+	</div>
+
