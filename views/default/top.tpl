@@ -1,5 +1,5 @@
 <nav id="top" class="container-fluid">
-	<p class="text-right small"><a href="https://wyremski.pl/skrypt/festa" title="Festa - script" target="_blank">Festa v1.5</a></p>
+	<p class="text-right small"><a href="https://blog.wyremski.pl/skrypt-bazy-noclegow-festa/" title="Festa - script" target="_blank">Festa v1.5</a></p>
 </nav>
 <nav class="navbar navbar-default navbar-fixed-top" id="menu_box">
   <div class="container-fluid">
