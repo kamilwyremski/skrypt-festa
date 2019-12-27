@@ -560,8 +560,6 @@ INSERT INTO `settings` (`name`, `value`) VALUES
 ('lang', 'pl'),
 ('limit_page', '10'),
 ('limit_page_index', '6'),
-('lk', ''),
-('ln', ''),
 ('logo', '/upload/images/logo.png'),
 ('logo_facebook', '/upload/images/logo.png'),
 ('mail_attachment', '1'),
