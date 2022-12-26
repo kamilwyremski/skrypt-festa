@@ -706,6 +706,9 @@ ALTER TABLE `mails`
 ALTER TABLE `offers`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `offers` 
+  ADD INDEX(`active`);
+
 --
 -- Indexes for table `offers_categories`
 --
