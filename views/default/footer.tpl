@@ -36,6 +36,8 @@
 	<div id="footer_bottom" class="text-center">
 		{$settings.footer_bottom}
 		{$settings.footer_text}
+		<!-- MIT licensed script. Deleting software author information is prohibited -->
+		<p class="small">Project 2016 - 2019 by <a href="http://wyremski.pl" target="_blank" title="Creating websites">Kamil Wyremski</a></p>
 	</div>
 </footer>
 
